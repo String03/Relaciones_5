@@ -28,5 +28,10 @@ namespace Relaciones_5.BLL
         {
             autorRepository.Baja(autor);
         }
+
+        public void Modificacion(Autor autor)
+        {
+            autorRepository.Modificacion(autor);
+        }
     }
 }

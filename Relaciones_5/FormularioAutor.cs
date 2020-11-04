@@ -68,5 +68,15 @@ namespace Relaciones_5
             RefrescarGrilla();
             LimpiarCampos();
         }
+
+        private void btn_modificacion_autor_Click(object sender, EventArgs e)
+        {
+            var autor = SeleccionarAutor();
+            autor.Apellido = txt_apellido_autor.Text.Trim();
+            autor.Nombres = txt_nombres_autor.Text.Trim();
+            autorBLL.Modificacion(autor);
+            RefrescarGrilla();
+            LimpiarCampos();
+        }
     }
 }

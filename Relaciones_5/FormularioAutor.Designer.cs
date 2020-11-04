@@ -79,6 +79,7 @@
             this.btn_modificacion_autor.TabIndex = 11;
             this.btn_modificacion_autor.Text = "Modificación";
             this.btn_modificacion_autor.UseVisualStyleBackColor = true;
+            this.btn_modificacion_autor.Click += new System.EventHandler(this.btn_modificacion_autor_Click);
             // 
             // btn_baja_autor
             // 
