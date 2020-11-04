@@ -36,7 +36,10 @@
             this.txt_isbn_libro = new System.Windows.Forms.TextBox();
             this.txt_titulo_libro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.grillaAutorLibro = new System.Windows.Forms.DataGridView();
+            this.btn_agregar_autor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaLibro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaAutorLibro)).BeginInit();
             this.SuspendLayout();
             // 
             // grillaLibro
@@ -50,6 +53,7 @@
             this.grillaLibro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grillaLibro.Size = new System.Drawing.Size(658, 167);
             this.grillaLibro.TabIndex = 0;
+            this.grillaLibro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grillaLibro_CellClick);
             // 
             // btn_alta_libro
             // 
@@ -113,11 +117,35 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Título";
             // 
+            // grillaAutorLibro
+            // 
+            this.grillaAutorLibro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaAutorLibro.Location = new System.Drawing.Point(67, 454);
+            this.grillaAutorLibro.MultiSelect = false;
+            this.grillaAutorLibro.Name = "grillaAutorLibro";
+            this.grillaAutorLibro.ReadOnly = true;
+            this.grillaAutorLibro.RowTemplate.Height = 24;
+            this.grillaAutorLibro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grillaAutorLibro.Size = new System.Drawing.Size(658, 167);
+            this.grillaAutorLibro.TabIndex = 8;
+            // 
+            // btn_agregar_autor
+            // 
+            this.btn_agregar_autor.Location = new System.Drawing.Point(67, 673);
+            this.btn_agregar_autor.Name = "btn_agregar_autor";
+            this.btn_agregar_autor.Size = new System.Drawing.Size(127, 23);
+            this.btn_agregar_autor.TabIndex = 9;
+            this.btn_agregar_autor.Text = "Agregar Autor";
+            this.btn_agregar_autor.UseVisualStyleBackColor = true;
+            this.btn_agregar_autor.Click += new System.EventHandler(this.btn_agregar_autor_Click);
+            // 
             // FormularioLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 740);
+            this.Controls.Add(this.btn_agregar_autor);
+            this.Controls.Add(this.grillaAutorLibro);
             this.Controls.Add(this.txt_titulo_libro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_isbn_libro);
@@ -130,6 +158,7 @@
             this.Text = "FormularioLibro";
             this.Load += new System.EventHandler(this.FormularioLibro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grillaLibro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaAutorLibro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +174,7 @@
         private System.Windows.Forms.TextBox txt_isbn_libro;
         private System.Windows.Forms.TextBox txt_titulo_libro;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView grillaAutorLibro;
+        private System.Windows.Forms.Button btn_agregar_autor;
     }
 }

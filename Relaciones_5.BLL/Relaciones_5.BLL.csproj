@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutorBLL.cs" />
+    <Compile Include="AutorLibroBLL.cs" />
     <Compile Include="LibroBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

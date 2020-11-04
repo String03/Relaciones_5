@@ -15,6 +15,7 @@ namespace Relaciones_5
     public partial class FormularioLibro : Form
     {
         private LibroBLL libroBLL = new LibroBLL();
+        private AutorLibroBLL autorLibroBLL = new AutorLibroBLL();
         public FormularioLibro()
         {
             InitializeComponent();
@@ -78,6 +79,39 @@ namespace Relaciones_5
             libroBLL.Modificacion(libro);
             RefrescarGrilla();
             LimpiarCampos();
+        }
+
+        private void grillaLibro_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var libro = grillaLibro.SelectedRows[0].DataBoundItem as Libro;
+            RefrescarGrillaAutor(libro);
+        }
+
+        private void RefrescarGrillaAutor(Libro libro)
+        {
+            grillaAutorLibro.DataSource = null;
+            grillaAutorLibro.DataSource = autorLibroBLL.BuscarAutorEnLibro(libro);
+        }
+
+        private void btn_agregar_autor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var libro = grillaLibro.SelectedRows[0].DataBoundItem as Libro;
+                var autor = grillaAutorLibro.SelectedRows[0].DataBoundItem as Autor;
+
+                autorLibroBLL.Alta(new AutorLibro {Autor_fk = autor.Id, Libro_fk = libro.Id });
+
+                RefrescarGrilla();
+                RefrescarGrillaAutor(libro);
+                LimpiarCampos();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }
