@@ -125,6 +125,7 @@
             this.Controls.Add(this.grillaLibro);
             this.Name = "FormularioLibro";
             this.Text = "FormularioLibro";
+            this.Load += new System.EventHandler(this.FormularioLibro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grillaLibro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
