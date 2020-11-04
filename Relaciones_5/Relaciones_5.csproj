@@ -52,8 +52,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioAutor.Designer.cs">
+      <DependentUpon>FormularioAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioLibro.Designer.cs">
+      <DependentUpon>FormularioLibro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioAutor.resx">
+      <DependentUpon>FormularioAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioLibro.resx">
+      <DependentUpon>FormularioLibro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +96,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Relaciones_5.BLL\Relaciones_5.BLL.csproj">
+      <Project>{1727A278-E350-4FCB-8600-7A7D166E527C}</Project>
+      <Name>Relaciones_5.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Relaciones_5.EE\Relaciones_5.EE.csproj">
+      <Project>{AA6722C5-38EF-47CB-B2D3-0ECA6FB6A5A2}</Project>
+      <Name>Relaciones_5.EE</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
