@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.grillaAutorLibro = new System.Windows.Forms.DataGridView();
             this.btn_agregar_autor = new System.Windows.Forms.Button();
+            this.btn_eliminar_autor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaLibro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaAutorLibro)).BeginInit();
             this.SuspendLayout();
@@ -120,7 +121,7 @@
             // grillaAutorLibro
             // 
             this.grillaAutorLibro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaAutorLibro.Location = new System.Drawing.Point(67, 454);
+            this.grillaAutorLibro.Location = new System.Drawing.Point(67, 430);
             this.grillaAutorLibro.MultiSelect = false;
             this.grillaAutorLibro.Name = "grillaAutorLibro";
             this.grillaAutorLibro.ReadOnly = true;
@@ -139,11 +140,22 @@
             this.btn_agregar_autor.UseVisualStyleBackColor = true;
             this.btn_agregar_autor.Click += new System.EventHandler(this.btn_agregar_autor_Click);
             // 
+            // btn_eliminar_autor
+            // 
+            this.btn_eliminar_autor.Location = new System.Drawing.Point(348, 673);
+            this.btn_eliminar_autor.Name = "btn_eliminar_autor";
+            this.btn_eliminar_autor.Size = new System.Drawing.Size(136, 23);
+            this.btn_eliminar_autor.TabIndex = 11;
+            this.btn_eliminar_autor.Text = "Eliminar Autor";
+            this.btn_eliminar_autor.UseVisualStyleBackColor = true;
+            this.btn_eliminar_autor.Click += new System.EventHandler(this.btn_eliminar_autor_Click);
+            // 
             // FormularioLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 740);
+            this.Controls.Add(this.btn_eliminar_autor);
             this.Controls.Add(this.btn_agregar_autor);
             this.Controls.Add(this.grillaAutorLibro);
             this.Controls.Add(this.txt_titulo_libro);
@@ -176,5 +188,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView grillaAutorLibro;
         private System.Windows.Forms.Button btn_agregar_autor;
+        private System.Windows.Forms.Button btn_eliminar_autor;
     }
 }

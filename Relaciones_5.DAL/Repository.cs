@@ -13,7 +13,7 @@ namespace Relaciones_5.DAL
 {
     public class Repository<T> : IRepository<T> where T : class, new()
     {
-        public void Alta(T entidad)
+        public virtual void Alta(T entidad)
         {
             string query = CrearQueryAlta(entidad);
             EjecutarQuery.ExecuteNonQuery(query);
@@ -110,7 +110,7 @@ namespace Relaciones_5.DAL
             return k.GetCustomAttributes().Any(l => l.GetType() == typeof(ClavePrimariaAttribute));
         }
 
-        public void Baja(T entidad)
+        public virtual void Baja(T entidad)
         {
             string query = CrearQueryBaja(entidad);
             EjecutarQuery.ExecuteNonQuery(query);
@@ -135,7 +135,7 @@ namespace Relaciones_5.DAL
             return "and " + e.Name + " = " + CrearExpresionDerecha(e, entidad);
         }
 
-        public IEnumerable<T> Listar()
+        public virtual IEnumerable<T> Listar()
         {
             string query = CrearQueryListar();
             var ejecutar = EjecutarQuery.ExecuteSelectStatement<T>(query);
@@ -162,7 +162,7 @@ namespace Relaciones_5.DAL
             return typeof(T).Name;
         }
 
-        public void Modificacion(T entidad)
+        public virtual void Modificacion(T entidad)
         {
             string query = CrearQueryUpdate(entidad);
             EjecutarQuery.ExecuteNonQuery(query);

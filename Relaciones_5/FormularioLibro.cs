@@ -113,5 +113,26 @@ namespace Relaciones_5
                 throw;
             }
         }
+
+        private void btn_eliminar_autor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var libro = grillaLibro.SelectedRows[0].DataBoundItem as Libro;
+                var autor = grillaAutorLibro.SelectedRows[0].DataBoundItem as Autor;
+
+                autorLibroBLL.Baja(new AutorLibro { Autor_fk = autor.Id, Libro_fk = libro.Id });
+
+                RefrescarGrilla();
+                RefrescarGrillaAutor(libro);
+                LimpiarCampos();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

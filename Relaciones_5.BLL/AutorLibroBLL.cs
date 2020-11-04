@@ -13,6 +13,12 @@ namespace Relaciones_5.BLL
     {
         private IRepository<AutorLibro> autorLibroRepository = new Repository<AutorLibro>();
         private IRepository<Autor> autorRepository = new Repository<Autor>();
+        private AutorLibroRepository repositoryAutorLibro = new AutorLibroRepository();
+
+        public void Baja(AutorLibro autorLibro)
+        {
+            repositoryAutorLibro.Baja(autorLibro);
+        }
 
 
         public IEnumerable<AutorLibro> Listar()

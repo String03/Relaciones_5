@@ -41,11 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutorLibroRepository.cs" />
     <Compile Include="IRepositorios\IRepository.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Relaciones_5.EE\Relaciones_5.EE.csproj">
+      <Project>{AA6722C5-38EF-47CB-B2D3-0ECA6FB6A5A2}</Project>
+      <Name>Relaciones_5.EE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Relaciones_5.Utilities\Relaciones_5.Utilities.csproj">
       <Project>{B032F2B6-F3B2-4517-A1B9-02860462501F}</Project>
       <Name>Relaciones_5.Utilities</Name>
