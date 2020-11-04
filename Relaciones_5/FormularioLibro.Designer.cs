@@ -79,6 +79,7 @@
             this.btn_modificacion_libro.TabIndex = 3;
             this.btn_modificacion_libro.Text = "Modificación";
             this.btn_modificacion_libro.UseVisualStyleBackColor = true;
+            this.btn_modificacion_libro.Click += new System.EventHandler(this.btn_modificacion_libro_Click);
             // 
             // label1
             // 

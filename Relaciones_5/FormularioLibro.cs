@@ -69,5 +69,15 @@ namespace Relaciones_5
             RefrescarGrilla();
             LimpiarCampos();
         }
+
+        private void btn_modificacion_libro_Click(object sender, EventArgs e)
+        {
+            var libro = SeleccionarLibro();
+            libro.Isbn = txt_isbn_libro.Text.Trim();
+            libro.Titulo = txt_titulo_libro.Text.Trim();
+            libroBLL.Modificacion(libro);
+            RefrescarGrilla();
+            LimpiarCampos();
+        }
     }
 }
