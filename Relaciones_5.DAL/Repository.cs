@@ -112,7 +112,27 @@ namespace Relaciones_5.DAL
 
         public void Baja(T entidad)
         {
-            throw new NotImplementedException();
+            string query = CrearQueryBaja(entidad);
+            EjecutarQuery.ExecuteNonQuery(query);
+        }
+
+        private string CrearQueryBaja(T entidad)
+        {
+            string query = $"delete from {CrearTablas()} where 1 = 1 {IgualarId(entidad)}";
+            return query;
+        }
+
+        private object IgualarId(T entidad)
+        {
+            return string.Join(" ",typeof(T).GetProperties()
+                .Where(k => TieneClavePrimariaAttributes(k))
+                .Select(e => CrearExpresionIgualdad(e, entidad))
+                .ToList());
+        }
+
+        private object CrearExpresionIgualdad(PropertyInfo e, T entidad)
+        {
+            return "and " + e.Name + " = " + CrearExpresionDerecha(e, entidad);
         }
 
         public IEnumerable<T> Listar()

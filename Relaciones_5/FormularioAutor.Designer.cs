@@ -88,6 +88,7 @@
             this.btn_baja_autor.TabIndex = 10;
             this.btn_baja_autor.Text = "Baja";
             this.btn_baja_autor.UseVisualStyleBackColor = true;
+            this.btn_baja_autor.Click += new System.EventHandler(this.btn_baja_autor_Click);
             // 
             // btn_alta_autor
             // 

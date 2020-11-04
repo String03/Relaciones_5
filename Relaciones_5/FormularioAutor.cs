@@ -55,5 +55,18 @@ namespace Relaciones_5
             txt_nombres_autor.Text = string.Empty;
             txt_apellido_autor.Text = string.Empty;
         }
+
+        private Autor SeleccionarAutor()
+        {
+            return (Autor)grillaAutor.SelectedRows[0].DataBoundItem;
+        }
+
+        private void btn_baja_autor_Click(object sender, EventArgs e)
+        {
+            var autor = SeleccionarAutor();
+            autorBLL.Baja(autor);
+            RefrescarGrilla();
+            LimpiarCampos();
+        }
     }
 }
