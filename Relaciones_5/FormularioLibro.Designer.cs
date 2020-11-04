@@ -59,6 +59,7 @@
             this.btn_alta_libro.TabIndex = 1;
             this.btn_alta_libro.Text = "Alta";
             this.btn_alta_libro.UseVisualStyleBackColor = true;
+            this.btn_alta_libro.Click += new System.EventHandler(this.btn_alta_libro_Click);
             // 
             // btn_baja_libro
             // 
