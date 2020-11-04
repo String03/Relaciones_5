@@ -56,5 +56,18 @@ namespace Relaciones_5
             txt_isbn_libro.Text = string.Empty;
             txt_titulo_libro.Text = string.Empty;
         }
+
+        private Libro SeleccionarLibro()
+        {
+            return (Libro)grillaLibro.SelectedRows[0].DataBoundItem;
+        }
+
+        private void btn_baja_libro_Click(object sender, EventArgs e)
+        {
+            var libro = SeleccionarLibro();
+            libroBLL.Baja(libro);
+            RefrescarGrilla();
+            LimpiarCampos();
+        }
     }
 }

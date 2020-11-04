@@ -69,6 +69,7 @@
             this.btn_baja_libro.TabIndex = 2;
             this.btn_baja_libro.Text = "Baja";
             this.btn_baja_libro.UseVisualStyleBackColor = true;
+            this.btn_baja_libro.Click += new System.EventHandler(this.btn_baja_libro_Click);
             // 
             // btn_modificacion_libro
             // 
